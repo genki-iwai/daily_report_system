@@ -2,11 +2,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="../layout/app.jsp">
     <c:param name="content">
-        <c:if test="${flush != null}"></c:if>
+        <c:if test="${flush != null}">
             <div id="fulush_success">
-                <c:out value="${flish}"></c:out>
+                <c:out value="${flush}"></c:out>
             </div>
-        <h2>従業員　一覧</h2>
+        </c:if>
+        <h2>従業員 一覧</h2>
         <table id ="employee_list">
             <tbody>
                 <tr>
@@ -14,7 +15,7 @@
                     <th>氏名</th>
                     <th>操作</th>
                 </tr>
-                <c:forEach var="enployee" items="${employees}" varStatus="status">
+                <c:forEach var="employee" items="${employees}" varStatus="status">
                 <tr class="row${status.count % 2}">
                     <td><c:out value="${employee.code}" /></td>
                     <td><c:out value="${employee.name}" /></td>
